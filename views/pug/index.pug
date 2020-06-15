@@ -6,37 +6,39 @@ html
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/public/style.css')
+    link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
   body
-    h1.border.center Sample Login Screen
-    h2.center#pug-success-message
-    | This page was created to test secure authentication strategies.
-    | Logins are hashed using bcrypt and stored in MongoDB.
-    p#pug-variable= message
-    
-    
-    
-    if showLogin
-      hr
-      p Login Form
-      form(action='/login', method='post')
-        div
-          label Username:
-          input(type='text', name='username')
-        div
-          label Password:
-          input(type='password', name='password')
-        div
-          input(type='submit', value='Log In')
-          
-    if showRegistration
-      hr
-      p Registration Form
-      form(action='/register', method='post')
-        div
-          label Username:
-          input(type='text', name='username')
-        div
-          label Password:
-          input(type='password', name='password')
-        div
-          input(type='submit', value='Register')
+    div(class="container-fluid")
+      h1.border.center Sample Login Screen
+      h2.center#pug-success-message
+      | This page was created to test secure authentication strategies.
+      | Logins are hashed using bcrypt and stored in MongoDB.
+      p#pug-variable= message
+      
+      
+      
+      if showLogin
+        hr
+        p Login Form
+        form(action='/login', method='post')
+          div
+            label Username:
+            input(class="form-control", type='text', name='username', required)
+          div
+            label Password:
+            input(class="form-control", type='password', name='password', required)
+          div
+            input(class="btn btn-primary", type='submit', value='Log In')
+            
+      if showRegistration
+        hr
+        p Registration Form
+        form(action='/register', method='post')
+          div
+            label Username:
+            input(class="form-control", type='text', name='username', required)
+          div
+            label Password:
+            input(class="form-control", type='password', name='password', required)
+          div
+            input(class="btn btn-primary", type='submit', value='Register')

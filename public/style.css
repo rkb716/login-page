@@ -1,3 +1,7 @@
+body {
+  background-color: #EAF1F7;
+}
+
 .border {
   border-style: inset;
   border-width: 1px;

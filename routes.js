@@ -11,7 +11,7 @@ module.exports = function(app, db) {
     //Change the response to render the Pug template
     res.render(process.cwd() + "/views/pug/index", {
       title: "Home page",
-      message: "login",
+      message: "Login below:",
       showLogin: true,
       showRegistration: true
     });
