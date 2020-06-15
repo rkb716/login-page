@@ -17,6 +17,10 @@ module.exports = function(app, db) {
     });
   });
 
+  app.route("/failure").get((req, res) => {
+    res.render(process.cwd() + '/views/pug/failure.pug');
+  })
+
   app.route("/profile").get(ensureAuthenticated, (req, res) => {
     res.render(process.cwd() + "/views/pug/profile", {
       username: req.user.username

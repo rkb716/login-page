@@ -49,7 +49,7 @@ module.exports = function(app, db) {
 
   app.post(
     "/login",
-    passport.authenticate("local", { failureRedirect: "/" }),
+    passport.authenticate("local", { failureRedirect: "/failure" }),
     function(req, res) {
       res.redirect("/profile");
     }
